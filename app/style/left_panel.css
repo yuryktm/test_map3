@@ -1,0 +1,120 @@
+.left-panel {
+    position: fixed;
+    z-index: 1000;
+    width: 496px;
+    height: 100%;
+    max-width: 496px;
+    min-width: 496px;
+    background: #ffffff;
+
+    top: 0px;
+    left: -496px;
+
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+
+.left-panel-Off {
+    left: -496px;
+}
+
+.left-panel-On {
+    left: 0px;
+}
+
+/********************************************************************************************************************/
+/*sign*/
+.sign-img{
+    width: 56px;
+    height: 56px;
+}
+
+.grayImg {
+    filter: gray; /* IE6-9 */
+    filter: grayscale(1); /* Firefox 35+ */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+.grayImgNone:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+#panel-showing .sign-img-box {
+    float: left;
+    padding: 20px;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+    border: 1px #DED3D3 solid;
+}
+
+#panel-configuring .sign-img-box,
+#panel-adding .sign-img-box
+{
+    float: left;
+    width: 96px;
+    height: 136px;
+    margin: 10px;
+    border: 1px #DED3D3 solid;
+}
+
+.sign-img-box div:first-child {
+    padding: 20px;
+}
+
+.sign-img-box div:last-child {
+    border-top: 1px #DED3D3 solid;
+    padding: 5px;
+}
+
+/*text box*/
+.sign-img-box input {
+    width: 84px;
+}
+
+/*для знаков дорог*/
+.road-sign-img-box {
+    float: left;
+    width: 444px;
+    height: 100%;
+    margin: 10px;
+    border: 1px #DED3D3 solid;
+}
+.road-sign-img {
+    height: 80px;
+    float: left;
+    margin: 10px;
+}
+
+/********************************************************************************************************************/
+/*overaid styles for panel*/
+
+.panel-title {
+    font-size: 24px;
+}
+
+.panel {
+    border: none;
+    border-radius: initial;
+}
+
+.panel-heading {
+    padding: 20px 25px;
+    border-bottom: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+/********************************************************************************************************************/
+.panel-heading span {
+    font-size: 24px;
+}
+/********************************************************************************************************************/
+.panel-body-settings,
+.panel-body-info{
+    display: none;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "siteMapApp",
+  "version": "0.0.1",
+  "description": "Site Map",
+  "authors": [
+    "Yury"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/js/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-leaflet-directive": "*",
+    "leaflet": "*",
+    "angular": "~1.4.0",
+    "bootstrap": "~3.3.5"
+  }
+}

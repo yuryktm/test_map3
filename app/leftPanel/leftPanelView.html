@@ -1,0 +1,85 @@
+<div class="left-panel" ng-controller="leftPanelCtrl">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title pull-left">Настройки</h1>
+            <span id="close-left-panel" class="pull-right glyphicon glyphicon-remove"></span>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body panel-body-info">
+            <div style="padding: 20px">
+                <div><label>Пробег: 375 км</label></div>
+                <div><label>Время в пути: 5 ч : 14 мин</label></div>
+                <div><label>Расход по топливу: 78 л</label></div>
+                <div><label>Платные дороги: 3</label></div>
+            </div>
+        </div>
+
+        <div class="panel-body panel-body-settings">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#panel-showing">Отображение</a></li>
+                <li><a data-toggle="tab" href="#panel-configuring">Конфигурирование</a></li>
+                <li><a data-toggle="tab" href="#panel-adding">Добавление</a></li>
+            </ul>
+
+            <div class="tab-content" style="padding-top: 15px;">
+
+                <!--Отображение-->
+                <div id="panel-showing" class="tab-pane fade in active">
+
+                    <div ng-repeat="sign in data.showPanel.signs.slice(0, 8)">
+                        <div class="sign-img-box">
+                            <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked && !leave }"
+                                 ng-mouseleave="leave = true" ng-mouseover="leave = false" ng-init="leave = false"
+                                 src= "{{'../app/img/' + sign.imgName }}"/>
+                        </div>
+                    </div>
+
+                    <div class="road-sign-img-box">
+                        <div ng-repeat="sign in data.showPanel.signs.slice(8)">
+                            <img id="s5_1" class="road-sign-img" ng-click="sign.checked = !sign.checked"
+                                 ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }" src= "{{'../app/img/' + sign.imgName }}"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Конфигурирование-->
+                <div id="panel-configuring" class="tab-pane fade">
+                    <div ng-repeat="sign in data.confPanel.signs">
+                        <div class="sign-img-box">
+                            <div>
+                                <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"
+                                     src= "{{'../app/img/' + sign.imgName }}"/>
+                            </div>
+                            <div>
+                                <input ng-model="sign.value" type="text" ng-show="sign.showValue"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btnApplyConf" type="button" class="btn btn-primary" style="margin: 20px;">Применить</button>
+
+                </div>
+
+                <!--Добавление-->
+                <div id="panel-adding" class="tab-pane fade">
+
+                    <div ng-repeat="sign in data.addPanel.signs">
+                        <div class="sign-img-box">
+                            <div>
+                                <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"
+                                     src= "{{'../app/img/' + sign.imgName }}"/>
+                            </div>
+                            <div>
+                                <input ng-model="sign.value" type="text" ng-show="sign.showValue"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btnApplyAdd" type="button" class="btn btn-primary" style="margin: 20px;">Применить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
