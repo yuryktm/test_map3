@@ -4,21 +4,25 @@
 	<meta charset="utf-8" />
 	<title>Site Map</title>
 
-	<link href="../app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-	<link href="../app/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-	<link  href="../app/bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/>
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+	<link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+	<link  href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet"/>
 
 	<link href="../app/style/style.css" rel="stylesheet" />
 	<link href="../app/style/left_panel.css" rel="stylesheet" />
 
-	<script src="../app/bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../app/bower_components/angular/angular.min.js"></script>
-	<script src="../app/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
-	<script src="../app/bower_components/leaflet/dist/leaflet.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+	<script src="../bower_components/leaflet/dist/leaflet.js"></script>
 
 	<script src="../app/leaflet/leafletModule.js"></script>
 	<script src="../app/leftPanel/leftPanelModule.js"></script>
+	<script src="../app/menu/menuModule.js"></script>
+
+	<script src="../app/menu/menuDir.js"></script>
+	<script src="../app/menu/menuCtrl.js"></script>
 
 	<script src="../app/leftPanel/leftPanelCtrl.js"></script>
 	<script src="../app/leftPanel/leftPanelDir.js"></script>
@@ -30,30 +34,12 @@
 
 </head>
 <body>
-
-	<!--left menu-->
-	<div class="left-menu">
-		<button id="open-left-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle" ng-click="data.panelInfoShow">
-			<span class="glyphicon glyphicon-menu-hamburger" />
-		</button>
-		<button id="info-left-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle" ng-click="data.panelInfoShow">
-			<span class="glyphicon glyphicon-exclamation-sign" />
-		</button>
-	</div>
-
-	<!--right menu-->
-	<div class="right-menu">
-		<button id="point-right-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle">
-			<span class="glyphicon glyphicon-map-marker" />
-		</button>
-	</div>
-
+	<!--меню-->
+	<div dir-menu></div>
 	<!--левая панель-->
 	<div dir-left-panel></div>
-
 	<div ng-controller="leafletCtrl">
 		<leaflet center="data.center" defaults="data.defaults" markers="data.markers" paths="data.paths"></leaflet>
 	</div>
-
 </body>
 </html>

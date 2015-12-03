@@ -10,5 +10,4 @@
             templateUrl:"leftPanel/leftPanelView.html"
         }
     }
-
 })();

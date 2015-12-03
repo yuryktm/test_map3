@@ -1,6 +1,10 @@
 (function(){
     "use strict";
-    angular.module("site-map-app", ["sm.leafletModule", "sm.leftPanelModule"])
+    angular.module("site-map-app",
+        [
+            "sm.leafletModule",
+            "sm.leftPanelModule",
+            "sm.menuModule"])
         .value("data", createData())
         .config(appConfig);
 
@@ -9,8 +13,13 @@
         var result = {};
         result.panelInfoShow = false;
         result.panelSettingsShow = false;
-
-        result.data = {
+        result.routeDate = {
+                mileage : 375, //Пробег
+                travelTime : "4 : 35",  //Время в пути
+                consumptionOfFuel : 78, //Расход по топливу
+                tollRoads : 3  //Платные дороги
+        },
+        result.modelSigns = {
             showPanel: {//Отображение вкладка
                 signs: [ //Знаки
                     { name : "3_4", checked : false, imgName: "3_4.svg"},
@@ -58,39 +67,6 @@
 
     function appConfig(){
         angular.element("div leaflet").css('width', window.innerWidth + "px").css('height', window.innerHeight + "px");
-
-
-        function panelOpen(type){
-            //hide left menu
-            angular.element('.left-menu').css("display", "none");
-            //show left panel
-            angular.element('.left-panel').css("left", "0px");
-            angular.element(type).css("display", "inline");
-        };
-
-        function panelClose(){
-            //hide left menu
-            angular.element('.left-menu').css("display", "inline");
-            //hide left panel
-            angular.element('.left-panel').css("left", "-496px");
-            angular.element(".panel-body-settings").css("display", "none");
-            angular.element(".panel-body-info").css("display", "none");
-        };
-
-        //открытия закрытия панели left-panel
-        angular.element("#open-left-menu-btn").click(function(){
-            panelOpen(".panel-body-settings");
-            angular.element(".panel-heading h1").text("Настройки");
-        });
-        angular.element("#close-left-panel").click(function(){
-            panelClose();
-        });
-
-        //открытия закрытия панели left-panel-info
-        angular.element("#info-left-menu-btn").click(function(){
-            panelOpen(".panel-body-info");
-            angular.element(".panel-heading h1").text("Данные о маршруте")
-        });
     }
 
 })();

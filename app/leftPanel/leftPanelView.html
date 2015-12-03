@@ -2,17 +2,18 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h1 class="panel-title pull-left">Настройки</h1>
-            <span id="close-left-panel" class="pull-right glyphicon glyphicon-remove"></span>
+            <h1 class="panel-title pull-left" ng-show="data.panelInfoShow">Данные о маршруте</h1>
+            <h1 class="panel-title pull-left" ng-show="data.panelSettingsShow">Настройки</h1>
+                <span ng-click="closeLeftPanel()" id="close-left-panel" class="pull-right glyphicon glyphicon-remove"></span>
             <div class="clearfix"></div>
         </div>
 
         <div class="panel-body panel-body-info">
             <div style="padding: 20px">
-                <div><label>Пробег: 375 км</label></div>
-                <div><label>Время в пути: 5 ч : 14 мин</label></div>
-                <div><label>Расход по топливу: 78 л</label></div>
-                <div><label>Платные дороги: 3</label></div>
+                <div><label>Пробег: {{data.routeDate.mileage}} км.</label></div>
+                <div><label>Время в пути: {{data.routeDate.travelTime}}</label></div>
+                <div><label>Расход по топливу: {{data.routeDate.consumptionOfFuel}} л.</label></div>
+                <div><label>Платные дороги: {{data.routeDate.tollRoads}}</label></div>
             </div>
         </div>
 
@@ -28,7 +29,7 @@
                 <!--Отображение-->
                 <div id="panel-showing" class="tab-pane fade in active">
 
-                    <div ng-repeat="sign in data.showPanel.signs.slice(0, 8)">
+                    <div ng-repeat="sign in data.modelSigns.showPanel.signs.slice(0, 8)">
                         <div class="sign-img-box">
                             <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked && !leave }"
                                  ng-mouseleave="leave = true" ng-mouseover="leave = false" ng-init="leave = false"
@@ -37,7 +38,7 @@
                     </div>
 
                     <div class="road-sign-img-box">
-                        <div ng-repeat="sign in data.showPanel.signs.slice(8)">
+                        <div ng-repeat="sign in data.modelSigns.showPanel.signs.slice(8)">
                             <img id="s5_1" class="road-sign-img" ng-click="sign.checked = !sign.checked"
                                  ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }" src= "{{'../app/img/' + sign.imgName }}"/>
                         </div>
@@ -46,7 +47,7 @@
 
                 <!--Конфигурирование-->
                 <div id="panel-configuring" class="tab-pane fade">
-                    <div ng-repeat="sign in data.confPanel.signs">
+                    <div ng-repeat="sign in data.modelSigns.confPanel.signs">
                         <div class="sign-img-box">
                             <div>
                                 <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"
@@ -65,7 +66,7 @@
                 <!--Добавление-->
                 <div id="panel-adding" class="tab-pane fade">
 
-                    <div ng-repeat="sign in data.addPanel.signs">
+                    <div ng-repeat="sign in data.modelSigns.addPanel.signs">
                         <div class="sign-img-box">
                             <div>
                                 <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"

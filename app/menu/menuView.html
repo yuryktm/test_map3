@@ -1,0 +1,19 @@
+<div ng-controller="menuCtrl">
+    <!--left menu-->
+    <div class="left-menu">
+        <button id="open-left-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle" ng-click="openLeftMenuSettings()">
+            <span class="glyphicon glyphicon-menu-hamburger" />
+        </button>
+        <button id="info-left-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle" ng-click="openLeftMenuInfo()">
+            <span  class="glyphicon glyphicon-exclamation-sign" />
+        </button>
+    </div>
+
+    <!--right menu-->
+    <div class="right-menu">
+        <button id="point-right-menu-btn" type="button" class="btn btn-primary btn-lg btn-circle"
+                ng-click="clickPointBtn()" >
+            <span class="glyphicon glyphicon-map-marker" />
+        </button>
+    </div>
+</div>
