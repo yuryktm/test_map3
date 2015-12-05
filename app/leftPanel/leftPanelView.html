@@ -31,16 +31,19 @@
 
                     <div ng-repeat="sign in data.modelSigns.showPanel.signs.slice(0, 8)">
                         <div class="sign-img-box">
-                            <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked && !leave }"
-                                 ng-mouseleave="leave = true" ng-mouseover="leave = false" ng-init="leave = false"
+                            <img class="sign-img"  ng-init="mleave = false"
+                                 ng-click="imgClick();" ng-mouseleave="onMouseLeave()"
+                                 ng-class="{ grayImg : !sign.checked, grayImgNone: !mleave }"
                                  src= "{{'../app/img/' + sign.imgName }}"/>
                         </div>
                     </div>
 
                     <div class="road-sign-img-box">
                         <div ng-repeat="sign in data.modelSigns.showPanel.signs.slice(8)">
-                            <img id="s5_1" class="road-sign-img" ng-click="sign.checked = !sign.checked"
-                                 ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }" src= "{{'../app/img/' + sign.imgName }}"/>
+                            <img class="road-sign-img" ng-init="mleave = false"
+                                 ng-click="imgClick();" ng-mouseleave="onMouseLeave()"
+                                 ng-class="{ grayImg : !sign.checked, grayImgNone: !mleave }"
+                                 src= "{{'../app/img/' + sign.imgName }}"/>
                         </div>
                     </div>
                 </div>
@@ -50,7 +53,9 @@
                     <div ng-repeat="sign in data.modelSigns.confPanel.signs">
                         <div class="sign-img-box">
                             <div>
-                                <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"
+                                <img class="sign-img" ng-init="mleave = false"
+                                     ng-click="imgClick();" ng-mouseleave="onMouseLeave()"
+                                     ng-class="{ grayImg : !sign.checked, grayImgNone: !mleave }"
                                      src= "{{'../app/img/' + sign.imgName }}"/>
                             </div>
                             <div>
@@ -69,7 +74,9 @@
                     <div ng-repeat="sign in data.modelSigns.addPanel.signs">
                         <div class="sign-img-box">
                             <div>
-                                <img class="sign-img" ng-click="sign.checked = !sign.checked" ng-class="{ grayImg : !sign.checked, grayImgNone: !sign.checked }"
+                                <img class="sign-img" ng-init="mleave = false; addPanelImg = true;"
+                                     ng-click="imgClick();" ng-mouseleave="onMouseLeave()"
+                                     ng-class="{ grayImg : !sign.checked, grayImgNone: !mleave }"
                                      src= "{{'../app/img/' + sign.imgName }}"/>
                             </div>
                             <div>
