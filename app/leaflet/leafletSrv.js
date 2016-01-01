@@ -24,20 +24,43 @@
         var markers =  this.data.markers;
         var paths = this.data.paths;
 
-        this.addMarkers = function(){
-            dataProviderService.dataProvider.getData(function(name) {
-                markers.marker1 = {
-                    lat: 59.9,
-                    lng: 30.3,
-                    message: name,
-                    // focus: true,
-                    draggable: false
-                };
-            });
+        this.addMarkers = function(signType){
+            //dataProviderService.dataProvider.getData(function(name) {
+            //    markers.marker1 = {
+            //        lat: 59.9,
+            //        lng: 30.3,
+            //        message: name,
+            //        // focus: true,
+            //        draggable: false
+            //    };
+            //});
 
-
+            dataProviderService.dataProvider.getSignsByType(function(signs){
+                var number = 1;
+                signs.forEach(function(s){
+                    markers[signType + "_" + number] = {
+                        lat: 59.9,
+                        lng: 30.3,
+                        message: name,
+                        // focus: true,
+                        draggable: false
+                    };
+                    number++;
+                })
+                //markers.marker1 = {
+                //    lat: 59.9,
+                //    lng: 30.3,
+                //    message: name,
+                //    // focus: true,
+                //    draggable: false
+                //};
+            }, signType);
 
         };
+
+        this.removeMarkers = function(signType){
+
+        }
     }
 })();
 

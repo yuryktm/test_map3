@@ -25,6 +25,8 @@
             //установка состояние выбран //removeClass
             if(this.sign.checked){
                 this.sign.checked = false;
+
+                unCheckedSign(this)
             }
             //установка состояния не выбран //addClass
             else{
@@ -34,6 +36,8 @@
                     });
                 }
                 this.sign.checked = true;
+
+                checkedSign(this);
             }
         }
 
@@ -45,7 +49,20 @@
             }
         };
         /************************************************************************************************************/
-        //leafletService.addMarkers();
+
+        function checkedSign(element){
+            if(element.showPanelImg){
+                //добавляем метки на карту
+                leafletService.addMarkers(element.sign.signType);
+            }
+        }
+
+        function unCheckedSign(element){
+            if(element.showPanelImg){
+            //удаляем метки с карты
+            leafletService.removeMarkers(element.sign.signType);
+            }
+        }
     }
 
 })();

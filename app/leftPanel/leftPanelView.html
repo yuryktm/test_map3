@@ -31,7 +31,7 @@
 
                     <div ng-repeat="sign in data.modelSigns.showPanel.signs.slice(0, 8)">
                         <div class="sign-img-box">
-                            <img class="sign-img"  ng-init="mleave = false"
+                            <img class="sign-img"  ng-init="mleave = false; showPanelImg = true;"
                                  ng-click="imgClick();" ng-mouseleave="onMouseLeave()"
                                  ng-class="{ grayImg : !sign.checked, grayImgNone: !mleave }"
                                  src= "{{'../app/img/' + sign.imgName }}"/>

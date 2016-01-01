@@ -7,7 +7,6 @@
 
         $scope.data = leafletService.data;
 
-        leafletService.addMarkers();
     }
 
 })();

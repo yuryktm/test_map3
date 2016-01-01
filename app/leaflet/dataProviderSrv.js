@@ -24,6 +24,20 @@
 
                     })
                     .error(errorLog);
+            },
+
+            getSignsByType: function(callback, signType) {
+                var url = "http://127.0.0.1:8802/Route/GetSigns?callback=JSON_CALLBACK"
+                var params = {'signType': signType};
+                $http.get(url, {params: params})
+                    .success(function (response, status, headers, config) {
+
+                       // response.Signs
+                       // var obj = data.response[0];
+                        callback(response.Signs);
+
+                    })
+                    .error(errorLog);
             }
         }
     }

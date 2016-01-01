@@ -22,18 +22,18 @@
         result.modelSigns = {
             showPanel: {//Отображение вкладка
                 signs: [ //Знаки
-                    { name : "3_4", checked : false, imgName: "3_4.svg"},
-                    { name : "3_11", checked : false, imgName: "3_11.svg"},
-                    { name : "3_12", checked : false, imgName: "3_12.svg"},
-                    { name : "3_13", checked : false, imgName: "3_13.svg"},
-                    { name : "3_14", checked : false, imgName: "3_14.svg"},
-                    { name : "3_15", checked : false, imgName: "3_15.svg"},
-                    { name : "3_32", checked : false, imgName: "3_32.svg"},
-                    { name : "3_33", checked : false, imgName: "3_33.svg"},
+                    { name : "3_4", checked : false, imgName: "3_4.svg", signType: 1},
+                    { name : "3_11", checked : false, imgName: "3_11.svg", signType: 2},
+                    { name : "3_12", checked : false, imgName: "3_12.svg", signType: 3},
+                    { name : "3_13", checked : false, imgName: "3_13.svg", signType: 4},
+                    { name : "3_14", checked : false, imgName: "3_14.svg", signType: 5},
+                    { name : "3_15", checked : false, imgName: "3_15.svg", signType: 6},
+                    { name : "3_32", checked : false, imgName: "3_32.svg", signType: 7},
+                    { name : "3_33", checked : false, imgName: "3_33.svg", signType: 8},
                     //знаки дорог
-                    { name : "s5_1", checked : false, imgName: "5_1.svg"},
-                    { name : "s7_11", checked : false, imgName: "7_11.gif"},
-                    { name : "s7_12", checked : false, imgName: "7_12.gif"}
+                    { name : "s5_1", checked : false, imgName: "5_1.svg", signType: 9},
+                    { name : "s7_11", checked : false, imgName: "7_11.gif", signType: 10},
+                    { name : "s7_12", checked : false, imgName: "7_12.gif", signType: 11}
                 ]
             },
             confPanel: {//Конфигурирование
